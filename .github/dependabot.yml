@@ -5,8 +5,13 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"     # package manager to update (e.g., npm, yarn, pip, gomod)
+    directory: "/"              # path to package manifests
     schedule:
-      interval: "weekly"
+      interval: "weekly"        # check for updates weekly (options: "daily", "weekly", "monthly")
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(deps)"
     
